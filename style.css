@@ -861,6 +861,12 @@ section {
         display: none !important;
     }
     
+    .hero {
+        padding-top: 130px;
+        padding-bottom: 60px;
+        min-height: auto;
+    }
+    
     /* Сдвигаем картинки наверх на планшетах и мобильных */
     #about .about-layout,
     #director .about-layout,
@@ -899,20 +905,72 @@ section {
 }
 
 @media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero {
+        padding-top: 110px;
+        padding-bottom: 40px;
+    }
+    
     .art-frame {
         height: 250px; /* Уменьшенная высота на мобильных */
         border-radius: 16px;
     }
     
     .hero-3d-wrapper {
-        height: 280px;
-    }
-    
-    section {
-        padding: 80px 0;
+        height: 240px;
     }
     
     .solutions-grid {
         gap: 16px;
+        margin-top: 24px;
+    }
+    
+    .solution-card {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+    
+    /* Адаптация аккордеона в Экспертизе */
+    #today details {
+        padding: 16px !important;
+        border-radius: 16px !important;
+    }
+    
+    #today details summary {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Адаптация формы */
+    .form-group input, 
+    .form-group textarea {
+        padding: 14px 18px;
+        font-size: 0.95rem;
+        border-radius: 10px;
+    }
+    
+    .contact-form {
+        gap: 16px;
+    }
+    
+    .form-consent {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+    
+    .form-consent button {
+        width: 100%;
+    }
+    
+    .footer-bottom-info {
+        padding-top: 40px;
+        gap: 30px;
+    }
+    
+    .site-footer {
+        padding: 60px 0 40px 0;
     }
 }
