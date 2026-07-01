@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
 
 :root {
     --color-bg: #05050a;
@@ -24,7 +24,7 @@
     );
     --chrome-text: linear-gradient(135deg, #ffffff 0%, #d4d4d8 25%, #52525b 50%, #ffffff 75%, #a1a1aa 100%);
     
-    --font-heading: 'Space Grotesk', sans-serif;
+    --font-heading: 'Oswald', sans-serif;
     --font-body: 'Geist', sans-serif;
 }
 
