@@ -233,218 +233,6 @@ function initThreeSphere() {
 }
 
 // ============================================================
-// Interactive Performance Chart (HTML5 Canvas)
-// ============================================================
-function initPerformanceChart() {
-    const canvas = document.getElementById('performance-chart');
-    const container = canvas ? canvas.parentElement : null;
-    if (!canvas || !container) return;
-
-    const ctx = canvas.getContext('2d');
-    
-    function resizeCanvas() {
-        canvas.width = container.clientWidth;
-        canvas.height = container.clientHeight;
-        drawChart();
-    }
-
-    // Русские месяцы
-    const months = ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
-    const dataA1 = [10000, 11500, 13200, 12800, 14900, 17200, 19500, 21800, 24500, 23800, 28900, 34830];
-    const dataSP = [10000, 10400, 10900, 10700, 11200, 11900, 12500, 13100, 14200, 13900, 15500, 18410];
-
-    let pointsA1 = [];
-    let pointsSP = [];
-    let animationProgress = 0;
-    
-    let mouseX = -1;
-    let mouseY = -1;
-    let isHovering = false;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                gsap.to({ val: 0 }, {
-                    val: 1,
-                    duration: 2.0,
-                    ease: "power3.out",
-                    onUpdate: function() {
-                        animationProgress = this.targets()[0].val;
-                        drawChart();
-                    }
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    observer.observe(canvas);
-
-    canvas.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouseX = e.clientX - rect.left;
-        mouseY = e.clientY - rect.top;
-        isHovering = true;
-        drawChart();
-    });
-
-    canvas.addEventListener('mouseleave', () => {
-        isHovering = false;
-        drawChart();
-    });
-
-    function drawChart() {
-        if (!ctx) return;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        const paddingLeft = 65;
-        const paddingRight = 40;
-        const paddingTop = 40;
-        const paddingBottom = 40;
-
-        const w = canvas.width - paddingLeft - paddingRight;
-        const h = canvas.height - paddingTop - paddingBottom;
-
-        // Рисуем сетку
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
-        ctx.lineWidth = 1;
-        
-        const gridLines = 5;
-        for (let i = 0; i <= gridLines; i++) {
-            const y = paddingTop + (h / gridLines) * i;
-            ctx.beginPath();
-            ctx.moveTo(paddingLeft, y);
-            ctx.lineTo(canvas.width - paddingRight, y);
-            ctx.stroke();
-
-            const val = Math.round(35000 - (35000 - 5000) / gridLines * i);
-            ctx.fillStyle = '#64748b';
-            ctx.font = '10px Geist, sans-serif';
-            ctx.textAlign = 'right';
-            ctx.fillText('$' + val.toLocaleString(), paddingLeft - 15, y + 4);
-        }
-
-        pointsA1 = [];
-        pointsSP = [];
-
-        const stepX = w / (months.length - 1);
-        months.forEach((month, idx) => {
-            const x = paddingLeft + stepX * idx;
-            
-            ctx.fillStyle = '#64748b';
-            ctx.font = '11px Space Grotesk, sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText(month, x, canvas.height - 15);
-
-            const yA1 = paddingTop + h - (h * ((dataA1[idx] - 5000) / 30000));
-            const ySP = paddingTop + h - (h * ((dataSP[idx] - 5000) / 30000));
-
-            pointsA1.push({ x, y: yA1 });
-            pointsSP.push({ x, y: ySP });
-        });
-
-        function drawCurve(points, strokeStyle, shadowColor, progress) {
-            if (points.length === 0) return;
-            ctx.beginPath();
-            ctx.moveTo(points[0].x, points[0].y);
-
-            const count = Math.ceil(points.length * progress);
-            for (let i = 0; i < count - 1; i++) {
-                const p0 = points[i];
-                const p1 = points[i + 1];
-                const xc = (p0.x + p1.x) / 2;
-                const yc = (p0.y + p1.y) / 2;
-                ctx.quadraticCurveTo(p0.x, p0.y, xc, yc);
-            }
-            
-            ctx.strokeStyle = strokeStyle;
-            ctx.lineWidth = 3;
-            ctx.shadowBlur = shadowColor ? 15 : 0;
-            ctx.shadowColor = shadowColor || 'transparent';
-            ctx.stroke();
-            ctx.shadowBlur = 0;
-        }
-
-        drawCurve(pointsSP, 'rgba(255, 255, 255, 0.25)', null, animationProgress);
-        drawCurve(pointsA1, '#00f0ff', 'rgba(0, 240, 255, 0.4)', animationProgress);
-
-        if (isHovering && animationProgress > 0.9) {
-            let closestIdx = 0;
-            let minDist = Infinity;
-            
-            pointsA1.forEach((pt, idx) => {
-                const dist = Math.abs(mouseX - pt.x);
-                if (dist < minDist) {
-                    minDist = dist;
-                    closestIdx = idx;
-                }
-            });
-
-            const activePtA1 = pointsA1[closestIdx];
-            const activePtSP = pointsSP[closestIdx];
-
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(activePtA1.x, paddingTop);
-            ctx.lineTo(activePtA1.x, canvas.height - paddingBottom);
-            ctx.stroke();
-
-            ctx.fillStyle = '#ffffff';
-            ctx.beginPath();
-            ctx.arc(activePtSP.x, activePtSP.y, 5, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.fillStyle = '#00f0ff';
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = '#00f0ff';
-            ctx.beginPath();
-            ctx.arc(activePtA1.x, activePtA1.y, 6, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.shadowBlur = 0;
-
-            const tooltipW = 180;
-            const tooltipH = 75;
-            let tooltipX = activePtA1.x + 20;
-            let tooltipY = activePtA1.y - tooltipH / 2;
-
-            if (tooltipX + tooltipW > canvas.width) {
-                tooltipX = activePtA1.x - tooltipW - 20;
-            }
-            if (tooltipY < paddingTop) {
-                tooltipY = paddingTop;
-            }
-            if (tooltipY + tooltipH > canvas.height - paddingBottom) {
-                tooltipY = canvas.height - paddingBottom - tooltipH;
-            }
-
-            ctx.fillStyle = 'rgba(10, 11, 16, 0.9)';
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.roundRect(tooltipX, tooltipY, tooltipW, tooltipH, 12);
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.textAlign = 'left';
-            ctx.fillStyle = '#ffffff';
-            ctx.font = '600 12px Space Grotesk, sans-serif';
-            ctx.fillText(months[closestIdx] + ' 2026', tooltipX + 16, tooltipY + 22);
-
-            ctx.fillStyle = '#00f0ff';
-            ctx.font = '11px Geist, sans-serif';
-            ctx.fillText('Портфель А1: $' + dataA1[closestIdx].toLocaleString(), tooltipX + 16, tooltipY + 42);
-
-            ctx.fillStyle = '#94a3b8';
-            ctx.fillText('Индекс S&P 500: $' + dataSP[closestIdx].toLocaleString(), tooltipX + 16, tooltipY + 58);
-        }
-    }
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-}
-
-// ============================================================
 // GSAP Reveal Animations
 // ============================================================
 function initRevealAnimations() {
@@ -461,12 +249,6 @@ function initRevealAnimations() {
         duration: 1.2,
         ease: 'power4.out',
     })
-    .from('.hero-subtitle', {
-        y: 20,
-        opacity: 0,
-        duration: 1.0,
-        ease: 'power3.out'
-    }, '-=0.8')
     .from('.hero-btns', {
         y: 20,
         opacity: 0,
@@ -487,7 +269,7 @@ function initRevealAnimations() {
 
         const title = sec.querySelector('.section-title');
         const desc = sec.querySelector('.section-desc');
-        const elements = sec.querySelectorAll('.glass-panel, .solutions-grid > div, .why-grid > div, .testimonials-grid > div');
+        const elements = sec.querySelectorAll('.glass-panel, .solutions-grid > div, .why-grid > div, .code-scroll-item');
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -520,8 +302,8 @@ function initRevealAnimations() {
             tl.from(elements, {
                 y: 40,
                 opacity: 0,
-                stagger: 0.15,
-                duration: 1.0,
+                stagger: 0.1,
+                duration: 0.8,
                 ease: 'power3.out'
             }, '-=0.5');
         }
@@ -639,7 +421,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initBurgerMenu();
     initThreeSphere();
-    initPerformanceChart();
     initRevealAnimations();
     initContactFormAndModals();
 });
