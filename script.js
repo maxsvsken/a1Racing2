@@ -240,6 +240,16 @@ function initRevealAnimations() {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    // Смена класса шапки при скролле (интеграция с Lenis/ScrollTrigger)
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        ScrollTrigger.create({
+            start: 'top -50',
+            onEnter: () => navbar.classList.add('navbar-scrolled'),
+            onLeaveBack: () => navbar.classList.remove('navbar-scrolled'),
+        });
+    }
+
     // Анимация Hero секции
     const heroTl = gsap.timeline();
     heroTl.from('.hero-title', {
@@ -357,17 +367,6 @@ function initRevealAnimations() {
 // Contact Form & Modal Window Logic
 // ============================================================
 function initContactFormAndModals() {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
-        });
-    }
-
     const modal = document.getElementById('policyModal');
     const policyLink = document.getElementById('policyLink');
     const closeBtn = document.querySelector('.close-modal');

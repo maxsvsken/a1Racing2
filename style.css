@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-scrolled {
-    background: rgba(5, 5, 10, 0.7);
+    background: rgba(5, 5, 10, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 16px 0;
