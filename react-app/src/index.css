@@ -628,10 +628,7 @@ section {
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1;
-    background: var(--chrome-text);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-accent-blue);
 }
 
 .code-scroll-title {
