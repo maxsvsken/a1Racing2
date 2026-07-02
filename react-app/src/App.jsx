@@ -244,7 +244,7 @@ export default function App() {
         <div className="glow-orb glow-orb-blue" style={{ top: '10%', right: '10%' }}></div>
         <div className="container hero-layout">
           <div className="hero-content">
-            <h1 className="hero-title text-gradient-chrome">
+            <h1 className="hero-title">
               А1 — ВЕДУЩИЙ ЭКСПЕРТ ПО ИНВЕСТИЦИЯМ В СПЕЦИАЛЬНЫЕ СИТУАЦИИ
             </h1>
             <div className="hero-btns" style={{ marginTop: '32px' }}>
