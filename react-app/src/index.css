@@ -627,9 +627,11 @@ section {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--color-accent-red);
     line-height: 1;
-    text-shadow: 0 0 10px rgba(255, 31, 68, 0.2);
+    background: var(--chrome-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .code-scroll-title {
