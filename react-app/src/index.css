@@ -405,19 +405,22 @@ section {
     padding-bottom: 100px;
     display: flex;
     align-items: center;
-    background-color: var(--color-bg);
+    background-color: transparent;
 }
 
 .hero-layout {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 60px;
+    text-align: center;
 }
 
 .hero-content {
     position: relative;
     z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -431,22 +434,7 @@ section {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-}
-
-.hero-3d-wrapper {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 5;
-}
-
-#canvas-3d {
-    width: 100%;
-    height: 100%;
-    outline: none;
 }
 
 @media (max-width: 991px) {
@@ -458,15 +446,11 @@ section {
     .hero-btns {
         justify-content: center;
     }
-    .hero-3d-wrapper {
-        height: 350px;
-        order: -1;
-    }
 }
 
 /* About Section & Standard Layout */
 .about {
-    background-color: var(--color-bg-darker);
+    background-color: transparent;
 }
 
 .about-layout {
@@ -514,8 +498,6 @@ section {
     display: block;
 }
 
-
-
 @media (max-width: 991px) {
     .about-layout {
         grid-template-columns: 1fr;
@@ -525,7 +507,7 @@ section {
 
 /* Solutions Grid & Cards (Кто зарабатывает с А1) */
 .solutions {
-    background-color: var(--color-bg);
+    background-color: transparent;
 }
 
 .solutions-grid {
@@ -634,7 +616,7 @@ section {
 
 /* Contact Section & Footer */
 .site-footer {
-    background-color: var(--color-bg-darker);
+    background-color: transparent;
     padding: 100px 0 60px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -867,7 +849,6 @@ section {
         min-height: auto;
     }
     
-    /* Сдвигаем картинки наверх на планшетах и мобильных */
     #about .about-layout,
     #director .about-layout,
     #investors .about-layout,
@@ -890,7 +871,6 @@ section {
         margin-right: auto;
     }
     
-    /* Для Кодекса на мобильных отключаем внутреннюю прокрутку */
     .code-scroll-container {
         height: auto;
         max-height: none;
@@ -915,12 +895,8 @@ section {
     }
     
     .art-frame {
-        height: 250px; /* Уменьшенная высота на мобильных */
+        height: 250px;
         border-radius: 16px;
-    }
-    
-    .hero-3d-wrapper {
-        height: 240px;
     }
     
     .solutions-grid {
@@ -933,7 +909,6 @@ section {
         border-radius: 16px;
     }
     
-    /* Адаптация аккордеона в Экспертизе */
     #today details {
         padding: 16px !important;
         border-radius: 16px !important;
@@ -943,7 +918,6 @@ section {
         font-size: 1.1rem !important;
     }
     
-    /* Адаптация формы */
     .form-group input, 
     .form-group textarea {
         padding: 14px 18px;
@@ -973,4 +947,22 @@ section {
     .site-footer {
         padding: 60px 0 40px 0;
     }
+}
+
+/* Фоновый холст для R3F */
+.canvas-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background-color: var(--color-bg);
+}
+
+.canvas-bg-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
 }

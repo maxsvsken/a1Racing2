@@ -1,0 +1,82 @@
+<svg width="600" height="120" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wrapper to center icons and arrange them in a row -->
+  <g transform="translate(10, 20)">
+    <!-- Icon 1: Blade -->
+    <g transform="translate(0, 0)">
+      <path d="M 24 56 L 16 56 A 8 8 0 0 1 8 48 L 8 16 A 8 8 0 0 1 16 8 L 24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 40 56 L 48 56 A 8 8 0 0 0 56 48 L 56 16 A 8 8 0 0 0 48 8 L 40 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 26 62 L 26 48 A 6 6 0 0 1 38 48 L 38 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="53" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 48 L 29 62 M 35 48 L 35 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 28 42 L 28 16 C 28 10 32 4 32 4 C 36 12 36 24 36 42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 34 20 C 33 22 33 26 34 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Icon 2: Saw -->
+    <g transform="translate(100, 0)">
+      <path d="M 24 56 L 16 56 A 8 8 0 0 1 8 48 L 8 16 A 8 8 0 0 1 16 8 L 24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 40 56 L 48 56 A 8 8 0 0 0 56 48 L 56 16 A 8 8 0 0 0 48 8 L 40 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 26 62 L 26 48 A 6 6 0 0 1 38 48 L 38 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="53" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 48 L 29 62 M 35 48 L 35 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 36 42 L 36 14 C 36 8 32 4 32 4 L 28 10 L 31 12 L 28 16 L 31 18 L 28 22 L 31 24 L 28 28 L 31 30 L 28 34 L 31 36 L 28 40 L 29 42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Icon 3: Scissors -->
+    <g transform="translate(200, 0)">
+      <path d="M 24 56 L 16 56 A 8 8 0 0 1 8 48 L 8 16 A 8 8 0 0 1 16 8 L 24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 40 56 L 48 56 A 8 8 0 0 0 56 48 L 56 16 A 8 8 0 0 0 48 8 L 40 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 26 62 L 26 48 A 6 6 0 0 1 38 48 L 38 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="53" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 48 L 29 62 M 35 48 L 35 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 28 42 L 32 28 L 38 6 L 35 4 L 31 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 36 42 L 32 28 L 26 6 L 29 4 L 33 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="26" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 38 L 34 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Icon 4: Corkscrew -->
+    <g transform="translate(300, 0)">
+      <path d="M 24 56 L 16 56 A 8 8 0 0 1 8 48 L 8 16 A 8 8 0 0 1 16 8 L 24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 40 56 L 48 56 A 8 8 0 0 0 56 48 L 56 16 A 8 8 0 0 0 48 8 L 40 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 26 62 L 26 48 A 6 6 0 0 1 38 48 L 38 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="53" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 48 L 29 62 M 35 48 L 35 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="33,42 33,36 37,33 31,30 37,27 31,24 37,21 31,18 37,15 31,12 35,9 33,7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 28 42 L 28 34 C 26 34 24 32 24 28 C 24 25 26 24 28 24 L 28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Icon 5: Ruler -->
+    <g transform="translate(400, 0)">
+      <path d="M 24 56 L 16 56 A 8 8 0 0 1 8 48 L 8 16 A 8 8 0 0 1 16 8 L 24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 40 56 L 48 56 A 8 8 0 0 0 56 48 L 56 16 A 8 8 0 0 0 48 8 L 40 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 26 62 L 26 48 A 6 6 0 0 1 38 48 L 38 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="53" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 48 L 29 62 M 35 48 L 35 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 28 42 L 28 4 L 36 4 L 36 42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="28" y1="8" x2="31" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="12" x2="30" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="16" x2="31" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="24" x2="31" y2="24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="28" x2="30" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="32" x2="31" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="28" y1="36" x2="30" y2="36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="10" x2="34" y2="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="14" x2="33" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="22" x2="33" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="26" x2="34" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="30" x2="33" y2="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="34" x2="34" y2="34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="36" y1="38" x2="33" y2="38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <!-- Icon 6: Fork -->
+    <g transform="translate(500, 0)">
+      <path d="M 24 56 L 16 56 A 8 8 0 0 1 8 48 L 8 16 A 8 8 0 0 1 16 8 L 24 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 40 56 L 48 56 A 8 8 0 0 0 56 48 L 56 16 A 8 8 0 0 0 48 8 L 40 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 26 62 L 26 48 A 6 6 0 0 1 38 48 L 38 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="53" r="1.5" stroke="currentColor" stroke-width="2"/>
+      <path d="M 29 48 L 29 62 M 35 48 L 35 62" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 32 42 L 32 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 24 12 L 24 18 C 24 24 40 24 40 18 L 40 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 29 23 L 29 12 M 35 23 L 35 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>
