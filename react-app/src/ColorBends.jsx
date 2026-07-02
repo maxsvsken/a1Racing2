@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -115,12 +115,13 @@ function ShaderPlane({
   intensity,
   bandWidth
 }) {
-  const meshRef = useRef();
+  const materialRef = useRef();
   const { size } = useThree();
 
-  const threeColors = colors.map(c => new THREE.Color(c));
+  const threeColors = useMemo(() => colors.map(c => new THREE.Color(c)), [colors]);
 
-  const uniforms = useRef({
+  // Создаем uniforms с использованием useMemo
+  const uniforms = useMemo(() => ({
     uTime: { value: 0 },
     uResolution: { value: new THREE.Vector2(size.width, size.height) },
     uMouse: { value: new THREE.Vector2(0, 0) },
@@ -134,29 +135,35 @@ function ShaderPlane({
     uNoise: { value: noise },
     uIntensity: { value: intensity },
     uBandWidth: { value: bandWidth },
-    uColor1: { value: threeColors[0] || new THREE.Color('#ff042e') },
-    uColor2: { value: threeColors[1] || new THREE.Color('#3e05e0') },
-    uColor3: { value: threeColors[2] || new THREE.Color('#ffffff') }
-  });
+    uColor1: { value: threeColors[0] },
+    uColor2: { value: threeColors[1] },
+    uColor3: { value: threeColors[2] }
+  }), [rotation, speed, scale, frequency, warpStrength, mouseInfluence, parallax, noise, intensity, bandWidth, threeColors]);
 
   useFrame((state) => {
     const { clock, mouse } = state;
-    uniforms.current.uTime.value = clock.getElapsedTime();
-    
-    // Плавное следование за курсором
-    uniforms.current.uMouse.value.x += (mouse.x * (size.width / size.height) - uniforms.current.uMouse.value.x) * 0.05;
-    uniforms.current.uMouse.value.y += (mouse.y - uniforms.current.uMouse.value.y) * 0.05;
-    
-    uniforms.current.uResolution.value.set(size.width, size.height);
+    if (materialRef.current) {
+      // Обновляем напрямую через uniforms материала
+      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
+      
+      // Плавное следование за курсором
+      const targetX = mouse.x * (size.width / size.height);
+      const targetY = mouse.y;
+      materialRef.current.uniforms.uMouse.value.x += (targetX - materialRef.current.uniforms.uMouse.value.x) * 0.05;
+      materialRef.current.uniforms.uMouse.value.y += (targetY - materialRef.current.uniforms.uMouse.value.y) * 0.05;
+      
+      materialRef.current.uniforms.uResolution.value.set(size.width, size.height);
+    }
   });
 
   return (
-    <mesh ref={meshRef}>
+    <mesh>
       <planeGeometry args={[2, 2]} />
       <shaderMaterial
+        ref={materialRef}
         vertexShader={ColorBendsShader.vertexShader}
         fragmentShader={ColorBendsShader.fragmentShader}
-        uniforms={uniforms.current}
+        uniforms={uniforms}
         depthWrite={false}
         depthTest={false}
       />
