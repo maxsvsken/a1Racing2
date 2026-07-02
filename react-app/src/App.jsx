@@ -176,19 +176,19 @@ export default function App() {
       {/* 3D ColorBends Background */}
       <div className="canvas-bg-container">
         <ColorBends
-          rotation={90}
-          speed={0.2}
-          colors={["#ff042e", "#3e05e0", "#ffffff"]}
+          rotation={95}
+          speed={0.1}
+          colors={["#f60202", "#3601f2", "#f1ebeb"]}
           transparent
           autoRotate={0}
-          scale={0.6}
+          scale={0.9}
           frequency={1}
           warpStrength={1}
-          mouseInfluence={1}
-          parallax={0.5}
-          noise={0.15}
+          mouseInfluence={0.5}
+          parallax={0.6}
+          noise={0.1}
           iterations={1}
-          intensity={1.5}
+          intensity={1}
           bandWidth={6}
         />
       </div>
