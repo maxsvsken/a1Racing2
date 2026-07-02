@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
-import ChromeBackground from './ChromeBackground';
+import ColorBends from './ColorBends';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -173,8 +173,25 @@ export default function App() {
 
   return (
     <>
-      {/* 3D Liquid Chrome Background */}
-      <ChromeBackground />
+      {/* 3D ColorBends Background */}
+      <div className="canvas-bg-container">
+        <ColorBends
+          rotation={90}
+          speed={0.2}
+          colors={["#ff042e", "#3e05e0", "#ffffff"]}
+          transparent
+          autoRotate={0}
+          scale={0.6}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={1}
+          parallax={0.5}
+          noise={0.15}
+          iterations={1}
+          intensity={1.5}
+          bandWidth={6}
+        />
+      </div>
 
       {/* Side Dot Navigation */}
       <nav className="dot-nav">
