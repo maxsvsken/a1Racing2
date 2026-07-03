@@ -433,12 +433,15 @@ section {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-size: clamp(3rem, 7vw, 5.2rem);
     line-height: 1.1;
     margin-bottom: 24px;
     font-weight: 900;
     color: #ffffff;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9);
+    text-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.5), 
+        0 10px 25px rgba(0, 0, 0, 0.4), 
+        0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .hero-btns {
