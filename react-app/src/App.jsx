@@ -245,9 +245,9 @@ export default function App() {
         <div className="container hero-layout">
           <div className="hero-content">
             <h1 className="hero-title">
-              А1 — ВЕДУЩИЙ ЭКСПЕРТ<br />
-              ПО&nbsp;ИНВЕСТИЦИЯМ<br />
-              В&nbsp;СПЕЦИАЛЬНЫЕ СИТУАЦИИ
+              <span>А1 — ВЕДУЩИЙ ЭКСПЕРТ</span><br />
+              <span>ПО&nbsp;ИНВЕСТИЦИЯМ</span><br />
+              <span>В&nbsp;СПЕЦИАЛЬНЫЕ СИТУАЦИИ</span>
             </h1>
             <div className="hero-btns" style={{ marginTop: '32px' }}>
               <a

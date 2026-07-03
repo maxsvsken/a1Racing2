@@ -428,7 +428,7 @@ section {
 .hero-content {
     position: relative;
     z-index: 10;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -442,6 +442,16 @@ section {
         0 4px 8px rgba(0, 0, 0, 0.5), 
         0 10px 25px rgba(0, 0, 0, 0.4), 
         0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title span {
+    display: inline-block;
+}
+
+@media (min-width: 768px) {
+    .hero-title span {
+        white-space: nowrap;
+    }
 }
 
 .hero-btns {
