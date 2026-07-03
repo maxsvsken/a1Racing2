@@ -259,6 +259,11 @@ export default function App() {
               </a>
             </div>
           </div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div className="art-frame">
+              <img src="/images/Racing/chrome_hero.png" alt="А1 Декоративный Арт" />
+            </div>
+          </div>
         </div>
       </section>
 
