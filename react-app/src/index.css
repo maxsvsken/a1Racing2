@@ -497,7 +497,7 @@ section {
     margin-bottom: 24px;
 }
 
-/* Унифицированные фреймы для картинок (размер 4:3) */
+/* Унифицированные фреймы для картинок */
 .art-frame {
     width: 100%;
     max-width: 480px;
@@ -505,6 +505,7 @@ section {
     align-items: center;
     justify-content: center;
     transition: transform 0.4s ease;
+    margin: 0 auto;
 }
 
 .art-frame:hover {
@@ -515,15 +516,19 @@ section {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 16px;
 }
 
-/* Декоративное позиционирование 3D-артов (выход за края экрана на десктопах) */
+/* Единый размер картинок на десктопе */
 @media (min-width: 992px) {
+    .art-frame {
+        max-width: 580px;
+    }
+
     #about .art-frame,
     #investors .art-frame,
     #today .art-frame {
         transform: translateX(15%);
-        max-width: 580px;
     }
     #about .art-frame:hover,
     #investors .art-frame:hover,
@@ -533,17 +538,22 @@ section {
 
     #code .art-frame {
         transform: translateX(-15%);
-        max-width: 580px;
     }
     #code .art-frame:hover {
         transform: translate(-15%, -5px);
     }
 }
 
+/* Мобильная адаптация */
 @media (max-width: 991px) {
     .about-layout {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 40px;
+    }
+
+    .art-frame {
+        max-width: 360px;
+        margin: 0 auto;
     }
 }
 
