@@ -450,7 +450,7 @@ export default function App() {
             
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div className="art-frame">
-                <img src="/images/Racing/Generated_Image_grubk0grubk0grub.png" alt="Экспертиза А1" />
+                <img src="/images/Racing/expertise_hero.png" alt="Экспертиза А1" />
               </div>
             </div>
           </div>
