@@ -519,14 +519,12 @@ section {
 
 /* Декоративное позиционирование 3D-артов (выход за края экрана на десктопах) */
 @media (min-width: 992px) {
-    #hero .art-frame,
     #about .art-frame,
     #investors .art-frame,
     #today .art-frame {
         transform: translateX(15%);
         max-width: 580px;
     }
-    #hero .art-frame:hover,
     #about .art-frame:hover,
     #investors .art-frame:hover,
     #today .art-frame:hover {
