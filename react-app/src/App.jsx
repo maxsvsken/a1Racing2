@@ -261,7 +261,7 @@ export default function App() {
           </div>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div className="art-frame">
-              <img src="/images/Racing/ChatGPT.png" alt="А1 Декоративный Арт" />
+              <img src="/images/Racing/chatgpt_hero.png" alt="А1 Декоративный Арт" />
             </div>
           </div>
         </div>
