@@ -450,7 +450,7 @@ section {
 
 @media (min-width: 768px) {
     .hero-title span {
-        white-space: nowrap;
+        white-space: normal;
     }
 }
 
