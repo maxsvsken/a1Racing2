@@ -285,7 +285,7 @@ export default function App() {
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div className="art-frame">
-                <img src="/images/Racing/chrome_building.png" alt="Офис А1" />
+                <img src="/images/Racing/about_hero.png" alt="Офис А1" />
               </div>
             </div>
           </div>
@@ -381,7 +381,7 @@ export default function App() {
             
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div className="art-frame">
-                <img src="/images/Racing/Image_se7cf3se7cf3se7c.png" alt="Инвесторы А1" />
+                <img src="/images/Racing/investors_hero.png" alt="Инвесторы А1" />
               </div>
             </div>
           </div>
