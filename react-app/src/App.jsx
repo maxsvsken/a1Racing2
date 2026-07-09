@@ -178,7 +178,7 @@ export default function App() {
         <ColorBends
           rotation={95}
           speed={0.1}
-          colors={["#f60202", "#3601f2", "#f1ebeb"]}
+          colors={["#f60202", "#3737b1", "#f1ebeb"]}
           transparent
           autoRotate={0}
           scale={0.9}
@@ -189,7 +189,7 @@ export default function App() {
           noise={0.1}
           iterations={1}
           intensity={1}
-          bandWidth={6}
+          bandWidth={2.5}
         />
       </div>
 
