@@ -178,7 +178,7 @@ export default function App() {
         <ColorBends
           rotation={95}
           speed={0.1}
-          colors={["#f60202", "#3737b1", "#f1ebeb"]}
+          colors={["#f60202", "#368f9f", "#f1ebeb"]}
           transparent
           autoRotate={0}
           scale={0.9}
